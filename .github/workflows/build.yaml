@@ -15,21 +15,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - {
-              target: "x86_64-unknown-linux-gnu",
-              os: ubuntu-latest,
-              platform: linux/amd64,
-            }
-          - {
-              target: "aarch64-unknown-linux-gnu",
-              os: ubuntu-latest,
-              platform: linux/arm64,
-            }
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Check out
         uses: actions/checkout@v3
@@ -65,13 +51,12 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHUB_TOKEN }}
 
-      - name: Build and push image with build args to container registry using gha cache
+      - name: Build and push images
         uses: docker/build-push-action@v4.0.0
         with:
           context: .
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: TARGET=${{ matrix.target }}
