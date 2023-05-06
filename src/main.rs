@@ -8,4 +8,5 @@ fn main() {
         " and the date is {}",
         chrono::Local::now().format("%Y-%m-%d")
     );
+    println!("Bye, world!");
 }
