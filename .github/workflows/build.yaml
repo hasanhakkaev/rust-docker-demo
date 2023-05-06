@@ -31,7 +31,6 @@ jobs:
             hhakkaev/rust-docker-demo
             ghcr.io/hasanhakkaev/rust-docker-demo
           tags: |
-            latest
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
 
       - name: Set up QEMU
