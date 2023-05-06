@@ -22,7 +22,7 @@ jobs:
 
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
-        
+
       - name: Set up tags
         id: meta
         uses: docker/metadata-action@v4
