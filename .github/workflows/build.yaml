@@ -40,7 +40,7 @@ jobs:
         with:
           images: |
             hhakkaev/qdrant
-            ghcr.io/hhakkaev/qdrant
+            ghcr.io/hasanhakkaev/qdrant
           tags: |
             type=schedule
             type=ref,event=branch
