@@ -21,6 +21,6 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry,id=${TARGETPLATFORM} --m
 
 FROM gcr.io/distroless/cc:latest as runtime
 
-COPY --from=builder  /build/app
+COPY --from=builder  /build/app /app
 
 CMD ["/app"]
