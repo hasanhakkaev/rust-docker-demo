@@ -12,7 +12,7 @@ RUN echo "Building for $TARGET"
 RUN --mount=type=cache,target=/usr/local/cargo/registry,id=${TARGETPLATFORM} --mount=type=cache,target=/build/target,id=${TARGETPLATFORM} \
     rustup target add ${TARGET} && \
     cargo build --release --target ${TARGET} --bin  rust-docker-demo && \
-    mv /build/target/release/${TARGET}/rust-docker-demo /build
+    mv /build/target/${TARGET}/release/rust-docker-demo /build
 
 
 FROM gcr.io/distroless/cc:latest as runtime
