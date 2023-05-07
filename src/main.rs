@@ -8,5 +8,12 @@ fn main() {
         " and the date is {}",
         chrono::Local::now().format("%Y-%m-%d")
     );
-    println!("Bye, world!");
+    println!("\nBye, world!");
+
+    // Print random quote
+    println!("Random quote 1");
+    println!("Random quote 2");
+    println!("Random quote 3");
+    println!("Random quote 4");
+
 }
