@@ -10,10 +10,4 @@ fn main() {
     );
     println!("\nBye, world!");
 
-    // Print random quote
-    println!("Random quote 1");
-    println!("Random quote 2");
-    println!("Random quote 3");
-    println!("Random quote 4");
-
 }
