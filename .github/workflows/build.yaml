@@ -55,7 +55,7 @@ jobs:
           password: ${{ secrets.GHUB_TOKEN }}
 
       - name: Build and push image with build args to container registry using gha cache
-        uses: docker/build-push-action@v4.1.0
+        uses: docker/build-push-action@v4.1.1
         with:
           context: ./
           file: ./Dockerfile
